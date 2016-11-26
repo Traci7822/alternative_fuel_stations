@@ -7,7 +7,7 @@ namespace :import do
     res = Net::HTTP.get(uri)
     response = JSON.parse(res)
     response.each do |r|
-      Station.create(fuel_type_code: r["fuel_type_code"], name: r["station_name"], street_address: r["street_address"], phone: r["station_phone"], hours: r["access_days_time"], station_id: r["id"], city: r["city"], state: r["state"], zip: r["zip"])
+      Station.create(ev_connector_types: r['ev_connector_types'], fuel_type_code: r["fuel_type_code"], name: r["station_name"], street_address: r["street_address"], phone: r["station_phone"], hours: r["access_days_time"], station_id: r["id"], city: r["city"], state: r["state"], zip: r["zip"])
     end
   end
 end

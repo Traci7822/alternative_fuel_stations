@@ -49,7 +49,7 @@ class StationsController < ApplicationController
   end
 
   def station_params
-    params.require(:station).permit(:id, :fuel_type_code, :name, :street_address, :phone, :hours, :station_id, :city, :state, :zip)
+    params.require(:station).permit(:id, :fuel_type_code, :name, :street_address, :phone, :hours, :station_id, :city, :state, :zip, :ev_connector_types)
   end
 
 

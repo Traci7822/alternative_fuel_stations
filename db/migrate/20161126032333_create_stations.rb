@@ -2,6 +2,7 @@ class CreateStations < ActiveRecord::Migration
   def change
     create_table :stations do |t|
       t.string :fuel_type_code
+      t.string :ev_connector_types
       t.string :name
       t.string :street_address
       t.text :phone
