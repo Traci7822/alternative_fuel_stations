@@ -1,6 +1,5 @@
 function StationService($http) {
   this.getStations = function () {
-    debugger;
     return $http.get('/stations.json')
   }
 }
