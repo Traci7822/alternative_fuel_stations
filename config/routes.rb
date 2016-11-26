@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
   resources :favorites, only: [:create, :destroy, :update, :index, :show]
   resources :ratings, only: [:create, :update, :index]
-  resources :stations, only: [:create, :show, :index]
+  resources :stations, only: [:create, :show, :index] do
+    collection do
+      get 'stations'
+    end
+  end
 
 end
