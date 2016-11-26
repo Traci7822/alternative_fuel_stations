@@ -21,6 +21,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders'
 gem 'active_model_serializers'
 gem 'devise'
+gem 'bower-rails'
+gem 'angular-rails-templates'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

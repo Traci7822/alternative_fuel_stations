@@ -1,0 +1,21 @@
+<div ng-controller="StationController">
+  <table>
+    <th>City</th>
+    <th>Name</th>
+    <th>Phone #</th>
+    <th>Address</th>
+    <th>Business Hours</th>
+    <th>EV Connector Types</th>
+    <th>Fuel Type</th>
+    <tr ng-repeat="station in stationList">
+      <td>{{station.city}}</td>
+      <td>{{station.station_name}}</a></td>
+      <th>{{station.station_phone}}</th>
+      <th>{{station.street_address}}</th>
+      <td>{{station.access_days_time}}</td>
+      <td>{{station.ev_connector_types}}</td>
+      <td>{{station.fuel_type_code}}</td>
+    </tr>
+  </table>
+
+</div>
