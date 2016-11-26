@@ -1,5 +1,5 @@
 class StationsController < ApplicationController
-  before_action :authenticate_user!, only[:favorite]
+  before_action :authenticate_user!, only: [:favorite]
 
   def index
     stations = Station.all
@@ -11,5 +11,5 @@ class StationsController < ApplicationController
     render json: station
   end
 
-  
+
 end
