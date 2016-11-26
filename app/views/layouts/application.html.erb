@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>AltFuelStations</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="app" ng-app="app">
+    <h1>Alternative Fuel stations</h1>
+    <a ui-sref="stations">Show All Stations</a>
+    <a ui-sref="user">Go To Your Account</a>
+    <div ui-view></div>
+  </div>
 </body>
 </html>
