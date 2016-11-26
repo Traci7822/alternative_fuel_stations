@@ -1,6 +1,5 @@
 function StationController($scope, StationService){
   var ctrl = this;
-
   StationService
     .getStations()
     .then(function (res) {

@@ -1,6 +1,7 @@
-function StationService($http){
+function StationService($http) {
   this.getStations = function () {
-    return $http.get('https://data.colorado.gov/resource/c7ve-fkni.json');
+    debugger;
+    return $http.get('/stations.json')
   }
 }
 
