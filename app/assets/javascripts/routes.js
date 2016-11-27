@@ -11,7 +11,7 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
         controller: 'StationController as vm',
       })
       .state('station', {
-        url: '/:name',
+        url: '/:id',
         templateUrl: 'pages/stations/station-profile.html',
         controller: 'StationProfileController as vm',
       })

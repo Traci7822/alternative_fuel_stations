@@ -5,12 +5,15 @@ stationApp.controller('StationController', ['$scope', 'StationService', '$stateP
       $scope.stationList = res.data;
     });
 
-    var getStation = function() {
-    }
 }]);
 
-stationApp.controller('StationProfileController', ['$scope', '$stateParams', function($scope, $stateParams) {
-  debugger;
+stationApp.controller('StationProfileController', ['$scope', '$stateParams', 'SelectedStation', function($scope, $stateParams, SelectedStation) {
+  SelectedStation
+    .getStation($stateParams)
+    .then(function (res) {
+      $scope.station = res.data;
+    });
+
 }]);
 
 stationApp.controller('HomeController', function() {
@@ -18,6 +21,13 @@ stationApp.controller('HomeController', function() {
 });
 
 
+
+
+// function getClub(id) {
+//      return $http.get('clubs/' + $stateParams.id)
+//        .then(handleResponse)
+//        .catch(handleError);
+//    }
 // activate();
 //
 //    function activate() {
@@ -32,4 +42,13 @@ stationApp.controller('HomeController', function() {
 //
 //    function setClub(data) {
 //       ctrl.club = data;
+//    }
+
+// ctrl.createClub = createClub;
+//
+//    function createClub() {
+//      return ClubFactory.createClub(ctrl.newClub)
+//        .then(function() {
+//          $state.go('home.clubs')
+//        })
 //    }
