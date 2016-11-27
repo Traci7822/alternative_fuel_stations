@@ -5,17 +5,17 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'home/home.html',
+        templateUrl: 'pages/home.html',
         controller: 'HomeController as vm'
       })
       .state('stations', {
         url: '/stations',
-        templateUrl: 'stations/stations.html',
+        templateUrl: 'pages/stations.html',
         controller: 'StationController as vm',
       })
       .state('station.stationProfile', {
         url: 'stationProfile',
-        templateUrl: 'station/station-profile.html',
+        templateUrl: 'pages/station-profile.html',
         controller: 'StationProfileController as vm'
       })
       $urlRouterProvider.otherwise('/')

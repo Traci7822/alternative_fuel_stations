@@ -5,3 +5,7 @@ stationApp.controller('StationController', ['$scope', 'StationService', function
       $scope.stationList = res.data;
     });
 }]);
+
+stationApp.controller('HomeController', function() {
+
+});
