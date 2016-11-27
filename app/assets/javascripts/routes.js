@@ -7,7 +7,7 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
       })
       .state('stations', {
         url: '/stations',
-        templateUrl: 'pages/stations.html',
+        templateUrl: 'pages/stations/stations.html',
         controller: 'StationController as vm',
       })
       .state('station.stationProfile', {

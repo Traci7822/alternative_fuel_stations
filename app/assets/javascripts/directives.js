@@ -1,7 +1,7 @@
 stationApp.directive('showStations', function() {
   return {
     restrict: 'E',
-    templateUrl: 'pages/stations-table.html',
+    templateUrl: 'pages/stations/stations-table.html',
     scope: {
       stationList: '='
     }
