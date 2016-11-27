@@ -8,7 +8,9 @@
   <th>Fuel Type</th>
   <tr ng-repeat="station in stationList">
     <td>{{station.city}}</td>
-    <td>{{station.name}}</a></td>
+    <td>
+      <a ui-sref="station({name: station.name})">{{station.name}}</a>
+    </td>
     <td>{{station.phone}}</td>
     <td>{{station.street_address}}</td>
     <td>{{station.hours}}</td>

@@ -10,10 +10,10 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'pages/stations/stations.html',
         controller: 'StationController as vm',
       })
-      .state('station.stationProfile', {
-        url: 'stationProfile',
-        templateUrl: 'pages/station-profile.html',
-        controller: 'StationProfileController as vm'
+      .state('station', {
+        url: '/:name',
+        templateUrl: 'pages/stations/station-profile.html',
+        controller: 'StationProfileController as vm',
       })
       $urlRouterProvider.otherwise('/')
   });
