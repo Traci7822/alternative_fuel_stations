@@ -1,6 +1,7 @@
-angular
-  .module('app', ['ui.router', 'templates', 'Devise'])
-  .config(function($stateProvider, $urlRouterProvider) {
+var stationApp = angular.module('app', ['ui.router', 'templates', 'Devise']);
+
+
+stationApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -18,4 +19,4 @@ angular
         controller: 'StationProfileController as vm'
       })
       $urlRouterProvider.otherwise('/')
-  })
+  });
