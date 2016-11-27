@@ -1,20 +1,14 @@
-<table>
-  <th>City</th>
-  <th>Name</th>
-  <th>Phone #</th>
-  <th>Address</th>
-  <th>Business Hours</th>
-  <th>EV Connector Types</th>
-  <th>Fuel Type</th>
-  <tr ng-repeat="station in stationList">
-    <td>{{station.city}}</td>
-    <td>
-      <a ui-sref="station({id: station.id})">{{station.name}}</a>
-    </td>
-    <td>{{station.phone}}</td>
-    <td>{{station.street_address}}</td>
-    <td>{{station.hours}}</td>
-    <td>{{station.ev_connector_types}}</td>
-    <td>{{station.fuel_type_code}}</td>
-  </tr>
-</table>
+<div ng-if="stationList.length">
+  <table>
+    <th>City</th>
+    <th>Name</th>
+    <th>EV Connector Types</th>
+    <th>Fuel Type</th>
+    <tr ng-repeat="station in stationList">
+      <td>{{station.city}}</td>
+      <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
+      <td>{{station.ev_connector_types}}</td>
+      <td>{{station.fuel_type_code}}</td>
+    </tr>
+  </table>
+</div>
