@@ -29,7 +29,29 @@ stationApp.controller('RatingController', ['$scope', function($scope) {
   }];
 }]);
 
+stationApp.controller('UserController', ['$location', 'AuthenticationService', function($location, AuthenticationService) {
 
+}])
+
+stationApp.controller('LoginController', ['$location', 'AuthenticationService', 'FlashService', function($location, AuthenticationService, FlashService) {
+  var vm = this;
+  vm.login = login;
+  AuthenticationService.ClearCredentials();
+
+  function login() {
+    vm.dataLoading = true;
+    AuthenticationService.Login(vm.username, vm.password, function(response) {
+      if (response.sucess) {
+        AuthenticationService.SetCredentials(vm.username, vm.password);
+        $location.path('/');
+        // maybe change this to user page
+      } else {
+        FlashService.Error(response.message);
+        vm.dataLoading = false;
+      }
+    });
+  }
+}])
 
 
 // function getClub(id) {
