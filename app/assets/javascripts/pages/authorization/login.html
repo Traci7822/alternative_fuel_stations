@@ -2,12 +2,12 @@
   <h1>Log In</h1>
 </div>
 
-<form ng-submit="login()">
+<form ng-controller="AuthorizationController as user" ng-submit="login()">
   <div class="input-group">
-    <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+    <input type="email" class="form-control" placeholder="Email" id="inputEmail" ng-model="user.credentials.email">
   </div>
   <div class="input-group">
-    <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+    <input type="password" class="form-control" placeholder="Password" id="inputPassword" ng-model="user.credentials.password">
   </div>
   <input type="submit" class="btn btn-default" value="Log In">
 </form>

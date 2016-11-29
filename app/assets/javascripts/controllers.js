@@ -29,63 +29,81 @@ stationApp.controller('RatingController', ['$scope', function($scope) {
   }];
 }]);
 
-stationApp.controller('NavigationController', ['$scope', 'Auth', function($scope, Auth){
-  $scope.signedIn = Auth.isAuthenticated;
-  $scope.logout = Auth.logout;
+// stationApp.controller('NavigationController', ['$scope', 'Auth', function($scope, Auth){
+//   $scope.signedIn = Auth.isAuthenticated;
+//   $scope.logout = Auth.logout;
+//
+//   Auth.currentUser().then(function (user) {
+//     $scope.user = user;
+//   });
+//
+//   $scope.$on('devise:new-registration', function (e, user) {
+//     $scope.user = user;
+//   });
+//   $scope.$on('devise:login', function (e, user) {
+//     $scope.user = user;
+//   });
+//   $scope.$on('devise:logout', function (e, user) {
+//     $scope.user = {};
+//   });
+//
+// }])
 
-  Auth.currentUser().then(function (user) {
-    $scope.user = user;
-  });
-
-  $scope.$on('devise:new-registration', function (e, user) {
-    $scope.user = user;
-  });
-  $scope.$on('devise:login', function (e, user) {
-    $scope.user = user;
-  });
-  $scope.$on('devise:logout', function (e, user) {
-    $scope.user = {};
-  });
-
-}])
-
-stationApp.controller('AuthorizationController', ['$scope', '$state', 'Auth', function($scope, $state, Auth) {
-  var config = {
-    headers: {
-      'X-HTTP-Method-Override': 'POST'
-    }
-  };
+stationApp.controller('AuthorizationController', ['$scope', '$location', 'Auth', function($scope, $location, Auth) {
+  var ctrl = this;
+  ctrl.credentials = {email: '', password: ''};
+  // ctrl.config = {
+  //   headers: {
+  //     'X-HTTP-Method-Override': 'POST'
+  //   }
+  // };
 
   $scope.login = function() {
-    var credentials = {
-      email: $scope.user.email,
-      password: $scope.user.password
-    }
-    Auth.login(credentials, config).then(function(user){
+    Auth.login(ctrl.credentials).then(function(user){
       console.log(user);
-      $state.go('stations');
+      $location.path("/");
+      alert('Successfully signed in user!')
     }, function(error) {
-      console.log(error)
+      console.info("Error in authenticating user!");
+      alert('Error in siging in User!');
     });
-  };
-  $scope.register = function() {
-    var credentials = {
-      email: $scope.user.email,
-      password: $scope.user.password,
-      password_confirmation: $scope.user.password
-    };
-    debugger;
-
-    Auth.register(credentials, config).then(function(registeredUser) {
-      console.log(registeredUser);
-      $state.go('stations');
-    }, function(error) {
-      console.log(error)
-    });
-      //
-    // });
-  };
+  }
 }])
+
+stationApp.controller('SessionController', ['Auth', '$scope', '$location', function(Auth, $scope, $location) {
+  $scope.signedIn = Auth.isAuthenticated;
+
+  Auth.currentUser().then(function(user) {
+    Auth.isAuthenticated = true;
+  }, function(error) {
+    console.log(error);
+  });
+
+  $scope.$on('devise:login', function(event, currentUser) {
+    Auth.isAuthenticated = true;
+    console.log(currentUser.inspect);
+  });
+
+  $scope.$on('devise:new-session', function(event, currentUser) {
+    Auth.isAuthenticated = true;
+    console.log(currentUser.inspect);
+  });
+
+  $scope.$on('devise:new-registration', function(event, currentUser) {
+    Auth.isAuthenticated = true;
+    console.log(currentUser.inspect);
+  })
+
+  $scope.logout = function() {
+    Auth.logout().then(function(oldUser) {
+      alert("Successfully logged out");
+      $location.path('/');
+    }, function(error) {
+      alert("error");
+    });
+  }
+}])
+
 
 
 

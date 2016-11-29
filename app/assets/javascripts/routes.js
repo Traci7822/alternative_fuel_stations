@@ -20,21 +20,11 @@ stationApp.config(function($stateProvider, $urlRouterProvider, AuthProvider) {
         url: '/login',
         templateUrl: 'pages/authorization/login.html',
         controller: 'AuthorizationController',
-        onEnter: function(Auth) {
-          AuthProvider.loginPath('/users/sign_in');
-          AuthProvider.loginMethod('GET');
-          AuthProvider.resourceName('customer');
-        }
       })
       .state('register', {
         url: '/register',
         templateUrl: 'pages/authorization/_register.html',
         controller: 'AuthorizationController',
-        onEnter: function(Auth){
-          AuthProvider.registerPath('/users/sign_up'),
-          AuthProvider.registerMethod('GET'),
-          AuthProvider.resourceName('user')
-        }
       })
       // .state('station.ratings', {
       //   url: "",
