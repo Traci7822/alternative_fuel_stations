@@ -5,7 +5,10 @@
       "angular": "v1.5.8",
       "angular-ui-router": "latest",
       "bootstrap": "latest",
-      "angular-devise": "latest"
+      "angular-devise": "latest",
+      "angular-cookies": "v1.5.10"
     }
   }
 }
+
+/*figure out why bower angular-cookies isn't working*/

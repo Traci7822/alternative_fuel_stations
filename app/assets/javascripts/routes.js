@@ -15,6 +15,16 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'pages/stations/station-profile.html',
         controller: 'StationProfileController as vm',
       })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'pages/users/login.html',
+        controllerAs: 'LoginController as vm'
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'pages/users/register.html',
+        controllerAs: 'RegisterController as vm'
+      })
       // .state('station.ratings', {
       //   url: "",
       //   templateUrl: 'pages/stations/ratings.html',
