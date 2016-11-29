@@ -1,4 +1,7 @@
-stationApp.config(function($stateProvider, $urlRouterProvider) {
+stationApp.config(function($stateProvider, $urlRouterProvider, AuthProvider) {
+    AuthProvider.registerPath('/users/sign_up');
+    AuthProvider.registerMethod('GET');
+    AuthProvider.resourceName('user');
     $stateProvider
       .state('home', {
         url: '/',
@@ -17,13 +20,23 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
       })
       .state('login', {
         url: '/login',
-        templateUrl: 'pages/authorization/_login.html',
-        controller: 'AuthorizationController'
+        templateUrl: 'pages/authorization/login.html',
+        controller: 'AuthorizationController',
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function(){
+            $state.go('home');
+          })
+        }]
       })
       .state('register', {
         url: '/register',
         templateUrl: 'pages/authorization/_register.html',
-        controller: 'AuthorizationController'
+        controller: 'AuthorizationController',
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function(){
+            $state.go('stations');
+          })
+        }]
       })
       // .state('station.ratings', {
       //   url: "",

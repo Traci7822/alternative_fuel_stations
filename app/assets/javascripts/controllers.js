@@ -50,15 +50,34 @@ stationApp.controller('NavigationController', ['$scope', 'Auth', function($scope
 }])
 
 stationApp.controller('AuthorizationController', ['$scope', '$state', 'Auth', function($scope, $state, Auth) {
+  var config = {
+    headers: {
+      'X-HTTP-Method-Override': 'POST'
+    }
+  };
+
   $scope.login = function() {
     Auth.login($scope.user).then(function(){
+      debugger;
       $state.go('home');
     });
   };
   $scope.register = function() {
-    Auth.register($scope.user).then(function() {
-      $state.go('home');
+    var credentials = {
+      email: $scope.user.email,
+      password: $scope.user.password,
+      password_confirmation: $scope.user.password
+    };
+    debugger;
+
+    Auth.register(credentials, config).then(function(registeredUser) {
+      console.log(registeredUser);
+      $state.go('stations');
+    }, function(error) {
+      console.log(error)
     });
+      //
+    // });
   };
 }])
 
