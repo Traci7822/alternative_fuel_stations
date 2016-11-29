@@ -1,8 +1,18 @@
 <h1>{{station.name}}</h1>
+<ul class="attributes">
+  <li><a ui-sref="hours">Hours</a></li>
+  <li><a ui-sref="contact">Contact</a></li>
+  <li><a ui-sref="comments">Comments</a></li>
+</ul>
 
-<h3>{{station.hours}}</h3>
-<h3>{{station.phone}}</h3>
-<h3>{{station.street_address}}</h3>
+
 <div class="station-info">
   <ui-view></ui-view>
 </div>
+
+
+<!--
+
+<h3>{{station.hours}}</h3>
+<h3>{{station.phone}}</h3>
+<h3>{{station.street_address}}</h3> -->

@@ -12,7 +12,6 @@ stationApp.controller('StationProfileController', ['$scope', '$stateParams', 'Se
     .getStation($stateParams)
     .then(function (res) {
       $scope.station = res.data;
-      debugger;
     });
 
 }]);
