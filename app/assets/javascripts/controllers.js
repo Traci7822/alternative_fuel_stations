@@ -1,3 +1,5 @@
+// move controllers to their own files
+
 stationApp.controller('StationController', ['$scope', 'StationService', '$stateParams', function($scope, StationService, stateParams) {
   StationService
     .getStations()
