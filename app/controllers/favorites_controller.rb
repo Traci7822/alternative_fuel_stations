@@ -1,15 +1,15 @@
-class FavoritesController < ApplicationController
+class RatingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
-  before_action :all_favorites
+  before_action :all_ratings
 
   def index
-    render json: @favorites
+    render json: @ratings
   end
 
   private
 
-  def all_favorites
-    @favorites = Favorite.all
+  def all_ratings
+    @ratings = Rating.all
   end
 
 end

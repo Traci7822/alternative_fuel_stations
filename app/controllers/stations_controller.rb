@@ -1,5 +1,4 @@
 class StationsController < ApplicationController
-  before_action :authenticate_user!, only: [:favorite]
   before_action :all_stations
 
   def index

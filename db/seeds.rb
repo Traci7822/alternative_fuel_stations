@@ -17,6 +17,4 @@ if ENV['RAILS_ENV'] != 'production'
   user2.save
   rating1 = Rating.find_or_create_by(station_id: 1, user_id: 1, stars: 5)
   rating2 = Rating.find_or_create_by(station_id: 2, user_id: 2, stars: 2)
-  favorite1 = Favorite.find_or_create_by(station_id: 1, user_id: 1)
-  favorite2 = Favorite.find_or_create_by(station_id: 1, user_id: 2)
 end
