@@ -24,7 +24,7 @@ stationApp.controller('HomeController', function() {
 stationApp.controller('RatingController', ['$scope', function($scope) {
   $scope.rating = 0;
   $scope.ratings = [{
-    current: 1,
+    current: 0,
     max: 5
   }];
 

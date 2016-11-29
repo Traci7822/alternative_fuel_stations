@@ -38,6 +38,7 @@ stationApp.directive('starRating', function() {
         });
       };
 
+      updateStars();
       scope.$watch('ratingValue', function (oldVal, newVal) {
         if (newVal) {
           updateStars();
