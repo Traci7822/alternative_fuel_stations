@@ -1,1 +1,2 @@
-var stationApp = angular.module('app', ['ui.router', 'templates', 'Devise', 'ngCookies']);
+var stationApp = angular.module('app', ['ui.router', 'templates', 'Devise']);
+//add ngCookies back in 
