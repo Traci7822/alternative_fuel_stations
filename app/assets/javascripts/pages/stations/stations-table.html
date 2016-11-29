@@ -11,6 +11,7 @@
       <td>{{station.ev_connector_types}}</td>
       <td>{{station.fuel_type_code}}</td>
       <td>
+        <!-- Put the following in a ui-view if possible -->
         <div ng-controller="RatingController"><span ng-repeat="rating in ratings">
           <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)">
           </span>
