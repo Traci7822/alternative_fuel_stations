@@ -9,3 +9,20 @@ stationApp.service('SelectedStation', ['$stateParams', '$http', function($stateP
     return $http.get('/stations/' + $stateParams.id + '.json')
   }
 }])
+
+stationApp.service('UserService', ['$http', function($http) {
+  var service = {};
+
+  service.GetAll = GetAll;
+  service.GetById = GetById;
+  service.GetByUsername = GetByUsername;
+  service.Create = Create;
+  service.Update = Update;
+  service.Delete = Delete;
+
+  return service;
+
+  function GetAll() {
+    
+  }
+}])
