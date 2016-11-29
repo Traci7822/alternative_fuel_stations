@@ -1,6 +1,5 @@
 class RatingSerializer < ActiveModel::Serializer
-  attributes :id, :station_id, :user_id, :stars
+  attributes :id, :station_id, :stars
 
   belongs_to :station
-  belongs_to :user
 end
