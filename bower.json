@@ -1,11 +1,22 @@
 {
-  "vendor": {
-    "name": "bower-rails generated vendor assets",
-    "dependencies": {
-      "angular": "v1.5.8",
-      "angular-ui-router": "latest",
-      "bootstrap": "latest",
-      "angular-devise": "latest"
-    }
+  "name": "alt_fuel_stations",
+  "homepage": "https://github.com/Traci7822/alternative_fuel_stations",
+  "authors": [
+    "Traci7822 <Tracir@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.2",
+    "AngularDevise": "angular-devise#^1.3.0",
+    "bootstrap": "^3.3.7"
   }
 }
