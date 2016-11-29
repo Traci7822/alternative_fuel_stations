@@ -9,7 +9,7 @@
     <th>EV Connector Types</th>
     <th>Fuel Type</th>
     <th>Rating</th>
-    <tr ng-repeat="station in stationList | filter:searchBox" ng-transclude: true >
+    <tr ng-repeat="station in stationList | filter:searchBox | orderBy: 'name'" ng-transclude: true >
       <td>{{station.city}}</td>
       <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
       <td>{{station.ev_connector_types}}</td>
