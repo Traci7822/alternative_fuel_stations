@@ -15,6 +15,15 @@ stationApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'pages/stations/station-profile.html',
         controller: 'StationProfileController as vm',
       })
+      .state('station.hours', {
+        url: '/hours',
+        templateUrl: 'pages/stations/station/hours.html',
+        controller: 'StationProfileController as vm'
+      })
+      .state('station.contact', {
+        url: '/contact',
+        templateUrl: 'pages/stations/station/contact.html'
+      })
       // .state('station.ratings', {
       //   url: "",
       //   templateUrl: 'pages/stations/ratings.html',
