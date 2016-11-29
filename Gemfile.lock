@@ -185,6 +185,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bower-rails
   byebug
+  devise
   devise_token_auth
   jbuilder (~> 2.0)
   jquery-rails
