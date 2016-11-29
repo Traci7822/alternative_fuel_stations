@@ -28,6 +28,10 @@ stationApp.controller('RatingController', ['$scope', function($scope) {
   }];
 }]);
 
+stationApp.controller('CommentsController', function() {
+  
+})
+
 
 
 
