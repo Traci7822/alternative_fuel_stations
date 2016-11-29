@@ -12,6 +12,7 @@ stationApp.controller('StationProfileController', ['$scope', '$stateParams', 'Se
     .getStation($stateParams)
     .then(function (res) {
       $scope.station = res.data;
+      debugger;
     });
 
 }]);
@@ -19,6 +20,18 @@ stationApp.controller('StationProfileController', ['$scope', '$stateParams', 'Se
 stationApp.controller('HomeController', function() {
 
 });
+
+stationApp.controller('RatingController', ['$scope', function($scope) {
+  $scope.rating = 0;
+  $scope.ratings = [{
+    current: 1,
+    max: 5
+  }];
+
+  $scope.getSelectedRating = function(rating) {
+    console.log(rating);
+  }
+}]);
 
 
 

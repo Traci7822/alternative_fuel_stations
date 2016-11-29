@@ -4,11 +4,19 @@
     <th>Name</th>
     <th>EV Connector Types</th>
     <th>Fuel Type</th>
-    <tr ng-repeat="station in stationList">
+    <th>Rating</th>
+    <tr ng-repeat="station in stationList" ng-transclude: true>
       <td>{{station.city}}</td>
       <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
       <td>{{station.ev_connector_types}}</td>
       <td>{{station.fuel_type_code}}</td>
+      <td>
+        <div ng-controller="RatingController"><span ng-repeat="rating in ratings">
+          <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)">
+          </span>
+          </div>
+        </div>
+      </td>
     </tr>
   </table>
 </div>
