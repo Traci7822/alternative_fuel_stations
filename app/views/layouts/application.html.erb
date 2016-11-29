@@ -9,8 +9,10 @@
 <body>
   <div class="app" ng-app="app">
     <h1>Alternative Fuel stations</h1>
-    <a ui-sref="stations">Show All Stations</a>
-    <a ui-sref="home">Home</a>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="stations">Show All Stations</a></li>
+    </ul>
     <br />
     <br />
     <div ui-view></div>
