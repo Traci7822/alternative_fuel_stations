@@ -57,9 +57,15 @@ stationApp.controller('AuthorizationController', ['$scope', '$state', 'Auth', fu
   };
 
   $scope.login = function() {
-    Auth.login($scope.user).then(function(){
-      debugger;
-      $state.go('home');
+    var credentials = {
+      email: $scope.user.email,
+      password: $scope.user.password
+    }
+    Auth.login(credentials, config).then(function(user){
+      console.log(user);
+      $state.go('stations');
+    }, function(error) {
+      console.log(error)
     });
   };
   $scope.register = function() {
