@@ -24,13 +24,9 @@ stationApp.controller('HomeController', function() {
 stationApp.controller('RatingController', ['$scope', function($scope) {
   $scope.rating = 0;
   $scope.ratings = [{
-    current: 0,
+    current: 0, //change to be the average of all ratings for station
     max: 5
   }];
-
-  $scope.getSelectedRating = function(rating) {
-    console.log(rating);
-  }
 }]);
 
 
