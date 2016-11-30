@@ -1,0 +1,7 @@
+<h3>Leave a comment:</h3>
+  <form ng-controller="CommentsController" name="newComment" ngSubmit="newComment()">
+    <h4>Name: <input type="text" name="name" ng-model='comment.name'></h4>
+    <h4>Email: <input type="email" name="email" ng-model="comment.email"></h4>
+    <h4>Comment: <input type="text" name="name" ng-model="comment.content"></h4>
+    <input type="submit" value="Submit Comment">
+  </form>
