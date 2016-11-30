@@ -1,13 +1,3 @@
-stationApp.directive('showStations', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'pages/stations/stations-table.html',
-    scope: {
-      stationList: '='
-    }
-  }
-})
-
 stationApp.directive('starRating', function() {
   return {
     restrict: 'A',
