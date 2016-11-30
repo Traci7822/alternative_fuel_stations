@@ -1,0 +1,3 @@
+stationApp.directive('showComments', function() {
+  
+})

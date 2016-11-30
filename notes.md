@@ -1,5 +1,4 @@
 -Paginate/scroll stations table
--validate comments
 -show comments without refresh
 -post ratings
 -show ratings
