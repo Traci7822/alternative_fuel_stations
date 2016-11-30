@@ -10,7 +10,7 @@ stationApp.factory('CommentFactory', ['$http', function($http) {
         method: 'POST',
         url: 'http://localhost:3000/comments',
         headers: {
-          'Content-Type': undefined
+          'Content-Type': 'application/json'
         },
         data: {
           comment: comment,
