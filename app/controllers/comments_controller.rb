@@ -8,4 +8,14 @@ class CommentsController < ApplicationController
   def create
     binding.pry
   end
+
+  def new
+    binding.pry
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:name, :email, :content, :station_id)
+  end
 end

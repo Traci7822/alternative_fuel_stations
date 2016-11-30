@@ -1,4 +1,6 @@
-stationApp.config(function($stateProvider, $urlRouterProvider) {
+stationApp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider
+      .defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
     $stateProvider
       .state('home', {
         url: '/',

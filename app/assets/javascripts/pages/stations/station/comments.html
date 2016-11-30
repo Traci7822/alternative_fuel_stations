@@ -2,18 +2,24 @@
 <h3>Leave a comment:</h3>
 <div ng-controller="CommentsController as ctrl">
   <form name="ctrl.form" ng-submit="ctrl.createComment()">
+
     <input name="name" ng-model="ctrl.name" required="required">
     <div ng-if="form.name.$touched && form.name.$error.required">
           Name is required!
     </div>
+
     <input name="email" ng-model="ctrl.email" required="required">
     <div ng-if="form.email.$touched && form.email.$error.required">
           email is required!
     </div>
+
     <input name="content" ng-model="ctrl.content" required="required">
     <div ng-if="form.content.$touched && form.content.$error.required">
           content is required!
     </div>
+
+    
     <input type="submit" value="Submit Comment">
+
   </form>
 </div>

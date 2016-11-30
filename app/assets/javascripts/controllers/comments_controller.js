@@ -1,5 +1,6 @@
-stationApp.controller('CommentsController', ['CommentFactory', function(CommentFactory) {
+stationApp.controller('CommentsController', ['$scope', '$stateParams', 'CommentFactory', function($scope, $stateParams, CommentFactory) {
   var ctrl = this;
+  ctrl.id = $stateParams.id
 
   this.createComment = function() {
     ctrl.comment = {
@@ -7,11 +8,8 @@ stationApp.controller('CommentsController', ['CommentFactory', function(CommentF
       email: this.email,
       content: this.content
     }
-     return CommentFactory.createComment(ctrl.comment)
-       .then(showComment)
-
+    console.log(ctrl.comment)
+     return CommentFactory.createComment(ctrl.comment, ctrl.id)
+      debugger;
      }
 }])
- stationApp.controller('FormController', function() {
-   debugger;
- })
