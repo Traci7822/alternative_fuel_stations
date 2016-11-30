@@ -28,7 +28,7 @@ stationApp.controller('RatingController', ['$scope', function($scope) {
   }];
 }]);
 
-stationApp.controller('CommentsController', ['$scope', 'comments' function($scope, comments) {
+stationApp.controller('CommentsController', ['$scope', 'comments', function($scope, comments) {
   $scope.comments = comments.comments;
   $scope.newComment = function() {
     var comment = this.vm.comment;
