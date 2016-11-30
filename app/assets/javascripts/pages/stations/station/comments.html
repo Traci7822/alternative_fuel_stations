@@ -2,28 +2,35 @@
   <h3>Leave a comment:</h3>
   <div ng-controller="CommentsController as ctrl">
     <form name="ctrl.form" ng-submit="ctrl.createComment()">
+
       <label>Name: </label>
-      <input name="name" ng-model="ctrl.name" required="required">
-      <div ng-if="form.name.$touched && form.name.$error.required">
-            Name is required!
+      <input type="text" name="name" ng-model="ctrl.name" ng-minlength="2" ng-maxlength="30" required>
+      <div class="help-block" ng-messages="ctrl.form.name.$error">
+        <p ng-message="required">Name is required</p>
+        <p ng-message="minlength">Name must be between 2-30 characters</p>
+        <p ng-message="maxlength">Name must be between 2-30 characters</p>
       </div>
+
+
       <br />
       <label>Email: </label>
-      <input name="email" ng-model="ctrl.email" required="required">
-      <div ng-if="form.email.$touched && form.email.$error.required">
-            email is required!
+      <input type="email" name="email" ng-model="ctrl.email" required>
+      <div class="help-block" ng-messages="ctrl.form.email.$error">
+        <p ng-message="required">Email is required</p>
+        <p ng-message="email">This needs to be a valid email</p>
       </div>
       <br />
 
       <label>Comment: </label>
-      <input name="content" ng-model="ctrl.content" required="required">
-      <div ng-if="form.content.$touched && form.content.$error.required">
-            content is required!
+      <input type="text" name="content" ng-model="ctrl.content" ng-minlength="3" ng-maxlength="500" required>
+      <div class="help-block" ng-messages="ctrl.form.content.$error">
+        <p ng-message="required">A comment is required</p>
+        <p ng-message="minlength">Comment must be more than 3 letters</p>
+        <p ng-message="maxlength">Comment can not be more than 500 letters</p>
       </div>
       <br />
 
       <input type="submit" value="Submit Comment">
-
     </form>
   </div>
 </div>
