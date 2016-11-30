@@ -8,7 +8,6 @@ stationApp.controller('CommentsController', ['$scope', '$stateParams', 'CommentF
       email: this.email,
       content: this.content
     }
-    console.log(ctrl.comment)
      return CommentFactory.createComment(ctrl.comment, ctrl.id)
       debugger;
      }

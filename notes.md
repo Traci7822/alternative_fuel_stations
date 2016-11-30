@@ -1,0 +1,6 @@
+-Paginate/scroll stations table
+-validate comments
+-show comments
+-post ratings
+-show ratings
+-prettify
