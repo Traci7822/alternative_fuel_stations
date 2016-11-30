@@ -1,1 +1,1 @@
-var stationApp = angular.module('app', ['ui.router', 'templates']);
+var stationApp = angular.module('app', ['ui.router', 'templates', 'ngMessages']);

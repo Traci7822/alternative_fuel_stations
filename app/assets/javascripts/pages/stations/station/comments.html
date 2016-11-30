@@ -1,25 +1,40 @@
+<div class="newComment">
+  <h3>Leave a comment:</h3>
+  <div ng-controller="CommentsController as ctrl">
+    <form name="ctrl.form" ng-submit="ctrl.createComment()">
+      <label>Name: </label>
+      <input name="name" ng-model="ctrl.name" required="required">
+      <div ng-if="form.name.$touched && form.name.$error.required">
+            Name is required!
+      </div>
+      <br />
+      <label>Email: </label>
+      <input name="email" ng-model="ctrl.email" required="required">
+      <div ng-if="form.email.$touched && form.email.$error.required">
+            email is required!
+      </div>
+      <br />
 
-<h3>Leave a comment:</h3>
-<div ng-controller="CommentsController as ctrl">
-  <form name="ctrl.form" ng-submit="ctrl.createComment()">
+      <label>Comment: </label>
+      <input name="content" ng-model="ctrl.content" required="required">
+      <div ng-if="form.content.$touched && form.content.$error.required">
+            content is required!
+      </div>
+      <br />
 
-    <input name="name" ng-model="ctrl.name" required="required">
-    <div ng-if="form.name.$touched && form.name.$error.required">
-          Name is required!
-    </div>
+      <input type="submit" value="Submit Comment">
 
-    <input name="email" ng-model="ctrl.email" required="required">
-    <div ng-if="form.email.$touched && form.email.$error.required">
-          email is required!
-    </div>
+    </form>
+  </div>
+</div>
 
-    <input name="content" ng-model="ctrl.content" required="required">
-    <div ng-if="form.content.$touched && form.content.$error.required">
-          content is required!
-    </div>
-
-    
-    <input type="submit" value="Submit Comment">
-
-  </form>
+<br />
+<div class="comments">
+  <h3>Comments</h3>
+  <ul>
+    <li ng-repeat="comment in station.comments">
+        <h4>{{comment.content}}</h4>
+        <h5>{{comment.name}}, {{comment.email}}</h5>
+    </li>
+  </ul>
 </div>
