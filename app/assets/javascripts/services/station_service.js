@@ -3,3 +3,5 @@ stationApp.service('StationService', ['$http', function($http) {
     return $http.get('/stations.json')
   }
 }])
+
+// change to factory
