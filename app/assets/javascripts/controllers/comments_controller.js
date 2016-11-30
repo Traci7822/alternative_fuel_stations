@@ -8,4 +8,5 @@ stationApp.controller('CommentsController', ['$scope', '$stateParams', 'CommentF
       email: this.email,
       content: this.content
     }
+  }
 }])
