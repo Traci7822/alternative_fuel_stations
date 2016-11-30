@@ -6,16 +6,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @comment = Comment.create(name: params[:comment][:name], email: params[:comment][:email], content: params[:comment][:content], station_id: params[:station_id])
+    if @comment.save
+      redirect_to comments_path
+    end
   end
 
   def new
     binding.pry
   end
 
-  private
-
-  def comment_params
-    params.require(:comment).permit(:name, :email, :content, :station_id)
-  end
 end
