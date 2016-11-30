@@ -28,8 +28,8 @@ stationApp.controller('RatingController', ['$scope', function($scope) {
   }];
 }]);
 
-stationApp.controller('CommentsController', ['$scope', function($scope) {
-  $scope.comments = [];
+stationApp.controller('CommentsController', ['$scope', 'comments' function($scope, comments) {
+  $scope.comments = comments.comments;
   $scope.newComment = function() {
     var comment = this.vm.comment;
     if(!comment.name || comment.name === '' || !comment.email || comment.email === '' || !comment.content || comment.content === '') {return;}

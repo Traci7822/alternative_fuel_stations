@@ -9,3 +9,8 @@ stationApp.service('SelectedStation', ['$stateParams', '$http', function($stateP
     return $http.get('/stations/' + $stateParams.id + '.json')
   }
 }])
+
+stationApp.service('comments', function() {
+  var comments = [];
+  return comments;
+})
