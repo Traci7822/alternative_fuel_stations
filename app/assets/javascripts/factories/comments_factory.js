@@ -5,7 +5,6 @@ stationApp.factory('CommentFactory', ['$http', function($http) {
     }
 
     function createComment(comment, station_id) {
-      debugger;
       var req = {
         method: 'POST',
         url: 'http://localhost:3000/comments',
@@ -20,11 +19,9 @@ stationApp.factory('CommentFactory', ['$http', function($http) {
 
       return $http(req)
         .then(function(data){
-          debugger;
           console.log(data)
         })
         .catch(function(data) {
-          debugger;
           console.log(data)
         })
       }
