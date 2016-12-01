@@ -1,6 +1,6 @@
-stationApp.controller('CommentsController', ['$scope', '$stateParams', '$state', 'CommentFactory', function($scope, $stateParams, CommentFactory, $state) {
+stationApp.controller('CommentsController', ['$scope', '$stateParams', 'CommentFactory', function($scope, $stateParams, CommentFactory) {
   var ctrl = this;
-  ctrl.id = $stateParams.id;
+  ctrl.id = $stateParams.id
 
   this.createComment = function() {
     ctrl.comment = {

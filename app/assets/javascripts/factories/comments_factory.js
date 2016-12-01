@@ -19,6 +19,7 @@ stationApp.factory('CommentFactory', ['$http', function($http) {
 
       return $http(req)
         .then(function(data){
+          this.location.reload()
           console.log(data)
         })
         .catch(function(data) {
