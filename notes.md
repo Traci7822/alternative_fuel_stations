@@ -1,5 +1,3 @@
 -Paginate/scroll stations table
 -show comments without refresh
--post ratings
--show ratings
 -prettify

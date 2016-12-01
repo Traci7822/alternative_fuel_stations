@@ -2,23 +2,3 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-
-.rating {
-    color: #a9a9a9;
-    margin: 0;
-    padding: 0;
-}
-ul.rating {
-    display: inline-block;
-}
-.rating li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 2px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-}
-.rating .filled {
-    color: #42B25F;
-}

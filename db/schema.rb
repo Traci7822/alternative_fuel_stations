@@ -24,14 +24,7 @@ ActiveRecord::Schema.define(version: 20161129220634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "station_id"
-    t.integer  "stars"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  
   create_table "stations", force: :cascade do |t|
     t.string   "fuel_type_code"
     t.string   "ev_connector_types"

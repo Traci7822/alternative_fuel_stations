@@ -1,3 +1,13 @@
+<div class="comments" ng-if="station.comments.length">
+  <h3>Comments</h3>
+  <ul>
+    <li ng-repeat="comment in station.comments">
+        <h4>{{comment.content}}</h4>
+        <h5>{{comment.name}}, {{comment.email}}</h5>
+    </li>
+  </ul>
+</div>
+
 <div class="newComment">
   <h3>Leave a comment:</h3>
   <div ng-controller="CommentsController as ctrl">
@@ -36,12 +46,3 @@
 </div>
 
 <br />
-<div class="comments">
-  <h3>Comments</h3>
-  <ul>
-    <li ng-repeat="comment in station.comments">
-        <h4>{{comment.content}}</h4>
-        <h5>{{comment.name}}, {{comment.email}}</h5>
-    </li>
-  </ul>
-</div>

@@ -31,11 +31,6 @@ stationApp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         templateUrl: 'pages/stations/station/comments.html',
         controller: 'CommentsController as vm'
       })
-      // .state('station.ratings', {
-      //   url: "",
-      //   templateUrl: 'pages/stations/ratings.html',
-      //   controller: 'RatingController as vm',
-      //   transclude: true
-      // })
+      
       $urlRouterProvider.otherwise('/')
   });
