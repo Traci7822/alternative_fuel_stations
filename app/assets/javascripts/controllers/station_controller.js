@@ -1,9 +1,10 @@
-stationApp.controller('StationController', ['$scope', 'StationService', '$stateParams', function($scope, StationService, stateParams) {
+stationApp.controller('StationController', ['$scope', 'StationFactory', '$stateParams', function($scope, StationService, stateParams) {
   var ctrl = this;
   $scope.filteredStations = [];
   $scope.currentPage = 1;
   $scope.numPerPage = 10;
   $scope.maxSize = 5;
+  $scope.stations = null;
 
   $scope.getStations = function() {
     $scope.stationList = StationService.getStations().then(function (res) {
@@ -21,8 +22,6 @@ stationApp.controller('StationController', ['$scope', 'StationService', '$stateP
   }
 
   $scope.getStations();
+  debugger;
+  //how do i get $scope.stations available?
 }]);
-
-//
-// for (var i = 0; i < res.data.length; i++){
-//   $scope.stationList.push(res.data[i])

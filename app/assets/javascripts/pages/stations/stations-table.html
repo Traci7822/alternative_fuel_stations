@@ -2,14 +2,15 @@
     <h4>Search for a station by City, Name, EV Connector Type, or Fuel Type: <input type="text" ng-model="searchBox"></h4>
 </div>
 <br />
-<div ng-if="stationList.length">
   <table>
     <th>City</th>
     <th>Name</th>
     <th>EV Connector Types</th>
     <th>Fuel Type</th>
     <th>Comments</th>
-    <tr ng-repeat="station in stationList | filter:searchBox | orderBy: 'name'" ng-transclude: true >
+    <pagination ng-model="currentPage" total-items="stations.length" max-size="maxSize" boundary-links="true"></pagination>
+
+    <tr ng-repeat="station in stations | filter:searchBox | orderBy: 'name'" ng-transclude: true >
       <td>{{station.city}}</td>
       <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
       <td>{{station.ev_connector_types}}</td>
@@ -19,6 +20,5 @@
       </div>
     </tr>
   </table>
-</div>
 
 <!-- Add pageination or scroll pages -->
