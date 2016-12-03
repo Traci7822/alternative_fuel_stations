@@ -1,7 +1,11 @@
 .app {
   background: #2DBA42;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 0;
 }
 
-body {
-  background: #2DBA42;
+.app h1 {
+  font-size: 7em;
+  text-align: center;
 }
