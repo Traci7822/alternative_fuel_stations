@@ -15,7 +15,7 @@
       <td>{{station.ev_connector_types}}</td>
       <td>{{station.fuel_type_code}}</td>
       <!-- comment # always shows -->
-      <div ng-if="station.comments.length > 0">
+      <div ng-show="station.comments.length > 0">
         <td>{{station.comments.length}} comments</td>
       </div>
     </tr>
