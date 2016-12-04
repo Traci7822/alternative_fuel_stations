@@ -1,4 +1,4 @@
-stationApp.controller('StationController', ['$scope', 'StationFactory', '$stateParams', function($scope, StationService, stateParams) {
+stationApp.controller('StationController', ['$scope', 'StationFactory', '$stateParams', function($scope, StationFactory, stateParams) {
   var ctrl = this;
   $scope.filteredStations = [];
   $scope.currentPage = 1;
@@ -7,7 +7,7 @@ stationApp.controller('StationController', ['$scope', 'StationFactory', '$stateP
   $scope.stations = null;
 
   $scope.getStations = function() {
-    $scope.stationList = StationService.getStations().then(function (res) {
+    $scope.stationList = StationFactory.getStations().then(function (res) {
       $scope.filterStations(res.data);
     });
   }
