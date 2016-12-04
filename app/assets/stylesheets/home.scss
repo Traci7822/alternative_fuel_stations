@@ -2,14 +2,42 @@ body {
   background: url(frontier-pathways-wet-mtn-valley_anna-zoromski-weaver-multimedia-group.jpg) no-repeat center center fixed;
   background-size: cover;
 }
+.app {
+}
 
 .app h1 {
   color: white;
   text-align: center;
   font-size: 9em;
   position: relative;
-  top: 150px;
+  top: 138px;
+  text-shadow: 3px 3px green;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
+
+
+.station-table {
+  text-align: center;
+  background-color: rgba(121, 171, 128, 0.75);
+  width: 75%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.showStations {
+  font-size: 3em;
+  padding-top: 300px;
+  text-align: center;
+}
+
+// .app .showStations {
+//   font-size: 3em;
+//   position: relative;
+//   text-align: center;
+//
+//
+// }
 // body {
 //   background: #2DBA42;
 // }
