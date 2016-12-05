@@ -12,11 +12,25 @@ table, th, td {
 }
 
 a:link {
-  color: #403C85;
+  color: #003636;
 }
 
 a:visited {
-  color: #403C85;
+  color: #003636;
+}
+
+.stationName {
+    margin-top: -100px;
+    position: relative;
+    height: 150px;
+}
+
+.stationReturn a:link {
+  color: white;
+}
+
+.stationReturn a:visited {
+  color: white;
 }
 
 td {
@@ -33,10 +47,12 @@ td {
   background-color: rgba(2, 103, 127, 0.35);
 }
 
+// figure out how to lock in position
 .stationReturn {
   font-size: 2em;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 75px;
+  // position: relative;
 }
 
 .stationAttributes {
@@ -45,19 +61,18 @@ td {
 }
 
 .btn {
-  margin-top: 75px;
+  margin-top: 375px;
 }
 
 .attribute {
-  text-align: center;
+  padding: 20px;
   margin-top: 150px;
-  font-size: 3em;
-  background-color: rgba(69, 181, 133, 0.55);
-  display: table;
+  height: 150px;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: white;
+  text-align: center;
 }
 
 .newComment {
@@ -68,4 +83,15 @@ td {
 .comments {
   margin-top: 50px;
   background-color: white;
+  height: 470px;
+  display: inline-block;
+  overflow: scroll;
+}
+
+.station-info {
+  // height: 200px;
+}
+
+.station-page {
+
 }

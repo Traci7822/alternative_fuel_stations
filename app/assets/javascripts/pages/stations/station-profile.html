@@ -1,9 +1,7 @@
 <div class="stationName">
   <h1>{{station.name}}</h1>
 </div>
-<div class="stationReturn" >
-  <a ui-sref="stations">Show All Stations</a>
-</div>
+
 
 <center>
   <div class="btn-group">
@@ -19,6 +17,11 @@
 </center>
 
 
-<div class="station-info">
-  <ui-view></ui-view>
+<div class="station-page">
+  <div class="station-info">
+    <ui-view></ui-view>
+  </div>
+  <div class="stationReturn" >
+    <a ui-sref="stations">Show All Stations</a>
+  </div>
 </div>
