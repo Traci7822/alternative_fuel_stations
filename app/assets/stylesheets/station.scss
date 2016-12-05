@@ -1,5 +1,5 @@
 table, th, td {
-  border: 3px solid white;
+  border: 3px solid #E8E7D7;
   border-collapse: collapse;
   font-size: 1.25em;
   margin-left: auto;
@@ -24,9 +24,36 @@ td {
   text-overflow: ellipsis;
   overflow: hidden;
   width: 400px;
+  background-color: rgba(69, 181, 133, 0.35);
+
 }
 
 .table-header {
   text-align: center;
-  background-color: #1B875D;
+  background-color: rgba(2, 103, 127, 0.35);
+}
+
+.stationReturn {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.stationAttributes {
+  text-align: center;
+  padding-top: 250px;
+}
+
+.btn {
+  margin-top: 75px;
+}
+
+.attribute {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 3em;
+  background-color: rgba(69, 181, 133, 0.55);
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }

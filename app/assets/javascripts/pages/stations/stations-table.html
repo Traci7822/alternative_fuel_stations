@@ -20,12 +20,12 @@
         <td>{{station.city}}</td>
         <td class="ev">{{station.ev_connector_types}}</td>
         <td>{{station.fuel_type_code}}</td>
-        <!-- comment # always shows -->
-        <div >
-          <td><span ng-show="station.comments.length > 0">{{station.comments.length}} comments</span></td>
-        </div>
+        <td><span ng-show="station.comments.length > 0">{{station.comments.length}} comments</span></td>
       </tr>
     </table>
-    <dir-pagination-controls></dir-pagination-controls>
+    <!-- center pagination controls -->
+    <div class="pagination">
+      <dir-pagination-controls></dir-pagination-controls>
+    </div>
   </div>
 </div>
