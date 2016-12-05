@@ -10,12 +10,11 @@
       <col width=150>
       <col width=100>
       <col width=150>
-
-      <th>Name</th>
-      <th>City</th>
-      <th>EV Connector Types</th>
-      <th>Fuel Type</th>
-      <th>Comments</th>
+      <th class="table-header">Name</th>
+      <th class="table-header">City</th>
+      <th class="table-header">EV Connector Types</th>
+      <th class="table-header">Fuel Type</th>
+      <th class="table-header">Comments</th>
       <tr dir-paginate="station in stationList | filter:searchBox | orderBy: 'name' | itemsPerPage: 20" ng-transclue: true>
         <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
         <td>{{station.city}}</td>
