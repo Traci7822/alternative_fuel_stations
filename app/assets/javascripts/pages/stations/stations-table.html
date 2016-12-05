@@ -5,14 +5,14 @@
   <br />
   <div ng-if="stationList.length">
     <table>
-      <th>City</th>
       <th>Name</th>
+      <th>City</th>
       <th>EV Connector Types</th>
       <th>Fuel Type</th>
       <th>Comments</th>
       <tr dir-paginate="station in stationList | filter:searchBox | orderBy: 'name' | itemsPerPage: 20" ng-transclue: true>
-        <td>{{station.city}}</td>
         <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
+        <td>{{station.city}}</td>
         <td>{{station.ev_connector_types}}</td>
         <td>{{station.fuel_type_code}}</td>
         <!-- comment # always shows -->
