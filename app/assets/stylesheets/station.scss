@@ -4,6 +4,7 @@ table, th, td {
   font-size: 1.25em;
   margin-left: auto;
   margin-right: auto;
+  table-layout: fixed;
 }
 
 .station-view {
@@ -16,4 +17,11 @@ a:link {
 
 a:visited {
   color: #403C85;
+}
+
+td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 400px;
 }
