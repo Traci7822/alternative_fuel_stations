@@ -10,12 +10,47 @@
       <col width=185>
       <col width=90>
       <col width=150>
-      <th class="table-header">Station Name</th>
-      <th class="table-header">City</th>
-      <th class="table-header">EV Connector Types</th>
-      <th class="table-header">Fuel Type</th>
-      <th class="table-header">Comments</th>
-      <tr dir-paginate="station in stationList | filter:searchBox | orderBy: 'name' | itemsPerPage: 20" ng-transclue: true>
+      <th class="table-header">
+        <a ng-click="sortType = 'name'; sortReverse = !sortReverse">
+            Station Name
+          <span ng-show="sortType != 'name'" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'name' && !sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'name' && sortReverse" class="glyphicon glyphicon-triangle-top"></span>
+        </a>
+      </th>
+      <th class="table-header">
+        <a ng-click="sortType = 'city'; sortReverse = !sortReverse">
+          City
+          <span ng-show="sortType != 'city'" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'city' && !sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'city' && sortReverse" class="glyphicon glyphicon-triangle-top"></span>
+        </a>
+      </th>
+      <th class="table-header">
+        <a ng-click="sortType = 'ev_connector_types'; sortReverse = !sortReverse">
+          EV Connector Types
+          <span ng-show="sortType != 'ev_connector_types'" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'ev_connector_types' && !sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'ev_connector_types' && sortReverse" class="glyphicon glyphicon-triangle-top"></span>
+        </a>
+      </th>
+      <th class="table-header">
+        <a ng-click="sortType = 'fuel_type_code'; sortReverse = !sortReverse">
+          Fuel Type
+          <span ng-show="sortType != 'fuel_type_code'" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'fuel_type_code' && !sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'fuel_type_code' && sortReverse" class="glyphicon glyphicon-triangle-top"></span>
+        </a>
+      </th>
+      <th class="table-header">
+        <a ng-click="sortType = 'comments'; sortReverse = !sortReverse">
+          Comments
+          <span ng-show="sortType != 'comments'" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'comments' && !sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+          <span ng-show="sortType == 'comments' && sortReverse" class="glyphicon glyphicon-triangle-top"></span>
+        </a>
+      </th>
+      <tr dir-paginate="station in stationList | filter:searchBox | orderBy:sortType:sortReverse | itemsPerPage: 20" ng-transclue: true>
         <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
         <td>{{station.city}}</td>
         <td class="ev">{{station.ev_connector_types}}</td>
