@@ -7,8 +7,17 @@ table, th, td {
   table-layout: fixed;
 }
 
-.station-view {
-  padding: 20px;
+td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 400px;
+  background-color: rgba(69, 181, 133, 0.35);
+}
+
+.table-header {
+  text-align: center;
+  background-color: rgba(2, 103, 127, 0.35);
 }
 
 a:link {
@@ -17,6 +26,10 @@ a:link {
 
 a:visited {
   color: #003636;
+}
+
+.station-view {
+  padding: 20px;
 }
 
 .stationName {
@@ -33,26 +46,10 @@ a:visited {
   color: white;
 }
 
-td {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 400px;
-  background-color: rgba(69, 181, 133, 0.35);
-
-}
-
-.table-header {
-  text-align: center;
-  background-color: rgba(2, 103, 127, 0.35);
-}
-
-// figure out how to lock in position
 .stationReturn {
   font-size: 2em;
   text-align: center;
   margin-top: 75px;
-  // position: relative;
 }
 
 .stationAttributes {
@@ -75,6 +72,10 @@ td {
   text-align: center;
 }
 
+.commentSection {
+  width: 100%;
+}
+
 .newComment {
   margin-top: 50px;
   background-color: white;
@@ -84,7 +85,7 @@ td {
   margin-top: 50px;
   background-color: white;
   height: 470px;
-  display: inline-block;
+  // display: inline-block;
   overflow: scroll;
 }
 
