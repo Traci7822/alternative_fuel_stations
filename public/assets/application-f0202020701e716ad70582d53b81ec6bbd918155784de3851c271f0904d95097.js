@@ -11569,7 +11569,7 @@ $.ajax({
       "$limit" : 5000,
       "$$app_token" : "YOURAPPTOKENHERE"
     }
-}).done(data) {
+}).done(data) 
   alert("Retrieved " + data.length + " records from the dataset!");
   console.log(data);
 });
