@@ -11572,6 +11572,7 @@ $.ajax({
 }).done(data) {
   alert("Retrieved " + data.length + " records from the dataset!");
   console.log(data);
+}
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
