@@ -1,0 +1,27 @@
+<div class="stationName">
+  <h1>{{station.name}}</h1>
+</div>
+
+
+<center>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Station Information <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a ui-sref="station.hours">Hours</a></li>
+      <li><a ui-sref="station.contact">Contact</a></li>
+      <li><a ui-sref="station.comments">Comments</a></li>
+    </ul>
+  </div>
+</center>
+
+
+<div class="station-page">
+  <div class="station-info">
+    <ui-view></ui-view>
+  </div>
+  <div class="stationReturn" >
+    <a ui-sref="stations">Show All Stations</a>
+  </div>
+</div>

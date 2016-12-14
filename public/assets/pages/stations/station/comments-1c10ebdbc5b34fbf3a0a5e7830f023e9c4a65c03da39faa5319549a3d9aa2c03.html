@@ -1,0 +1,58 @@
+<div class="commentSection">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1"></div>
+
+    <div class="newComment col-lg-2 col-md-2 col-sm-3 col-xs-4">
+      <h3>Leave a comment:</h3>
+
+        <form name="form" ng-submit="vm.createComment()">
+          <label>Name: </label><br />
+          <input type="text" name="name" ng-model="name" ng-minlength="2" ng-maxlength="30" required>
+
+          <div class="help-block" ng-messages="form.name.$error">
+            <p ng-message="required">Name is required</p>
+            <p ng-message="minlength">Name must be between 2-30 characters</p>
+            <p ng-message="maxlength">Name must be between 2-30 characters</p>
+          </div><br />
+
+          <label>Email: </label><br />
+          <input type="email" name="email" ng-model="email" required>
+
+          <div class="help-block" ng-messages="form.email.$error">
+            <p ng-message="required">Email is required</p>
+            <p ng-message="email">This needs to be a valid email</p>
+          </div><br />
+
+          <label>Comment: </label><br />
+          <textarea type="text" name="content" ng-model="content" ng-minlength="3" ng-maxlength="500" required></textarea>
+
+          <div class="help-block" ng-messages="form.content.$error">
+            <p ng-message="required">A comment is required</p>
+            <p ng-message="minlength">Comment must be more than 3 letters</p>
+            <p ng-message="maxlength">Comment can not be more than 500 letters</p>
+          </div><br />
+
+          <input type="submit" value="Submit Comment" >
+        </form><br />
+
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+
+    <div class="comments col-lg-4 col-md-4 col-sm-4 col-xs-5" ng-if="station.comments.length">
+      <h3>Comments:</h3>
+      <ul>
+        <li ng-repeat="comment in station.comments">
+            <h4>{{comment.content}}</h4>
+            <h5>{{comment.name}}, {{comment.email}}</h5>
+        </li>
+      </ul>
+    </div>
+
+    <br />
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1"></div>
+
+  </div>
+
+</div>
