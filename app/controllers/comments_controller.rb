@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-    binding.pry
   end
 
 end

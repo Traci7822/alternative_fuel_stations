@@ -6,7 +6,14 @@ stationApp.controller('StationController', ['$scope', 'StationFactory', '$stateP
     .getStations()
     .then(function (res) {
       $scope.stationList = res.data;
-      
+      for (var i = 0; i < $scope.stationList.length; i++) {
+        $scope.station = $scope.stationList[i];
+        $scope.station.counter = 0;
+      }
     });
+
+    $scope.updateCounter = function() {
+      this.station.counter += 1;
+    };
 
 }]);
