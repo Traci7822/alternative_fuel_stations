@@ -53,21 +53,12 @@
           <span ng-show="sortType == 'comments' && sortReverse" class="glyphicon glyphicon-triangle-top"></span>
         </a>
       </th>
-      <th class="table-header">
-        <a ng-click="sortType = 'votes'; sortReverse = !sortReverse">
-          Votes
-        </a>
-      </th>
       <tr dir-paginate="station in stationList | filter:searchBox | orderBy:sortType:sortReverse | itemsPerPage: 20" ng-transclue: true>
         <td><a ui-sref="station({id: station.id})">{{station.name}}</a></td>
         <td>{{station.city}}</td>
         <td class="ev">{{station.ev_connector_types}}</td>
         <td>{{station.fuel_type_code}}</td>
         <td><span ng-show="station.comments.length > 0">{{station.comments.length}} comments</span></td>
-        <td>
-          {{station.counter}}
-          <button type="button" name="upvote" ng-click="updateCounter()">+1</button>
-        </td>
       </tr>
     </table>
 
