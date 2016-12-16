@@ -14,8 +14,14 @@ stationApp.controller('StationProfileController', ['$scope', '$stateParams', 'Se
         email: form.email.value,
         content: form.content.value
       }
-      $scope.station.comments.push(comment)
+      debugger;
+
+      $scope.station.comments.push(comment);
+      form.name.value = "";
+      form.email.value = "";
+      form.content.value = "";
       return CommentFactory.createComment(comment, ctrl.id)
+
     }
 
 
