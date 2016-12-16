@@ -10,13 +10,13 @@ stationApp.controller('StationProfileController', ['$scope', '$stateParams', 'Se
 
     this.createComment = function() {
       var comment = {
-        name: "a new content",
-        email: "an email",
-        content: "some content"
+        name: form.name.value,
+        email: form.email.value,
+        content: form.content.value
       }
       $scope.station.comments.push(comment)
       return CommentFactory.createComment(comment, ctrl.id)
     }
 
-  
+
 }]);
